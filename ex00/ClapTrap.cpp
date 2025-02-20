@@ -1,18 +1,14 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
-{
-	this->name = "";
+ClapTrap::ClapTrap() {
 	std::cout << "Constructor called" << std::endl;
 }
 
-ClapTrap::~ClapTrap()
-{
+ClapTrap::~ClapTrap() {
 	std::cout << "Destructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name)
-{
+ClapTrap::ClapTrap(std::string name) {
 	this->name = name;
 	this->hitPoints = 10;
 	this->energyPoints = 10;
@@ -20,15 +16,13 @@ ClapTrap::ClapTrap(std::string name)
 	std::cout << "ClapTrap " << name << " created!" << std::endl;
 }
 
-ClapTrap& ClapTrap::operator=(const ClapTrap &other)
-{
+ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
 	if (this != &other)
 		this->name = other.name;
 	return (*this);
 }
 
-void	ClapTrap::attack(const std::string &target)
-{
+void	ClapTrap::attack(const std::string &target) {
 	if (this->hitPoints > 0 && this->energyPoints > 0)
 	{
 		std::cout << "ClapTrap " << this->name << " attacks " <<  target
@@ -36,14 +30,9 @@ void	ClapTrap::attack(const std::string &target)
 		--this->energyPoints;
 	}
 	else if (hitPoints == 0)
-	{
 		std::cout << "ClapTrap " << this->name << " has no hitPoints left" << std::endl;
-	}
 	else if (energyPoints == 0)
-	{
 		std::cout << "ClapTrap " << this->name << " has no energyPoints left" << std::endl;
-	}
-
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
