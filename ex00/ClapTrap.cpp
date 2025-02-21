@@ -7,6 +7,7 @@ ClapTrap::ClapTrap() : name("default"), hitPoints(10), energyPoints(10), attackD
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
+	std::cout << "ClapTrap " << this->name << " Copy-Constructor called" << std::endl;
 	*this = other;
 }
 
@@ -22,7 +23,6 @@ ClapTrap::~ClapTrap() {
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
 
-	std::cout << "ClapTrap " << this->name << " Copy-Constructor called" << std::endl;
 	if (this != &other) {
 		this->name = other.name;
 		this->hitPoints = other.hitPoints;
@@ -35,8 +35,8 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
 void	ClapTrap::attack(const std::string &target) {
 
 	if (this->hitPoints > 0 && this->energyPoints > 0) {
-		std::cout << "ClapTrap " << this->name << " attacks " <<  target
-		<< ", causing " << 1 << " points of damage!" << std::endl;
+		std::cout << "ClapTrap " << this->name << " hadukens " <<  target
+		<< ", causing " << this->attackDamage << " points of damage!" << std::endl;
 		--this->energyPoints;
 	}
 	else if (hitPoints == 0) {
