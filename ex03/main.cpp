@@ -1,14 +1,16 @@
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+
+#include "DiamondTrap.hpp"
 
 int		main(void)
 {
 	std::string nameSteve = "STEVE";
 	std::string nameHerobrine = "HEROBRINE";
 	std::string nameVillager = "VILLAGER";
+	std::string diamondName = "DIAMONDS";
 	ClapTrap steve(nameSteve);
 	ScavTrap herobrine(nameHerobrine);
 	FragTrap villager(nameVillager);
+	DiamondTrap diamond(diamondName);
 
 	std::cout << std::endl;
 
