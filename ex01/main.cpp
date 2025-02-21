@@ -7,7 +7,6 @@ int		main(void)
 	ClapTrap steve(nameSteve);
 	ScavTrap herobrine(nameHerobrine);
 
-
 	std::cout << std::endl;
 
 	steve.attack("HEROBRINE");
@@ -18,7 +17,7 @@ int		main(void)
 
 	herobrine.attack("STEVE");
 	herobrine.guardGate();
-	
+
 	std::cout << std::endl;
 	return (0);
 }
