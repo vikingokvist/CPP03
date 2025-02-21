@@ -13,9 +13,11 @@ class ClapTrap
 		unsigned int	attackDamage;
 	public:
 		ClapTrap();
-		~ClapTrap();
 		ClapTrap(std::string name);
+		
+		~ClapTrap();
 
+		ClapTrap(const ClapTrap &other);
 		ClapTrap &operator=(const ClapTrap &other);
 
 		void	attack(const std::string &target);

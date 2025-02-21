@@ -1,16 +1,24 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int		main(void)
 {
-	std::string name = "JOHNNY";
-	const std::string &enemy = "EVIL";
-	ClapTrap johnny(name);
-
-	johnny.attack(enemy);
-	johnny.takeDamage(5);
-	johnny.beRepaired(1);
-	johnny.attack(enemy);
+	std::string nameSteve = "STEVE";
+	std::string nameHerobrine = "HEROBRINE";
+	ClapTrap steve(nameSteve);
+	ScavTrap herobrine(nameHerobrine);
 
 
+	std::cout << std::endl;
+
+	steve.attack("HEROBRINE");
+	steve.takeDamage(5);
+	steve.beRepaired(1);
+
+	std::cout << std::endl;
+
+	herobrine.attack("STEVE");
+	herobrine.guardGate();
+	
+	std::cout << std::endl;
 	return (0);
 }
