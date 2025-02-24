@@ -2,14 +2,14 @@
 
 DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name") {
 
-	this->name = "defaultDT";
+	this->name = "default";
 	this->hitPoints = 0;
 	this->energyPoints = 0;
 	this->attackDamage = 0;
 	std::cout << "DiamondTrap Default Constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other) {
+DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other), FragTrap(other), ScavTrap(other) {
 
 	*this = other;
 	std::cout << "DiamondTrap " << this->name << " Copy-Constructor called" << std::endl;
