@@ -5,18 +5,18 @@
 
 class ScavTrap : virtual public ClapTrap
 {
+	private:
+		bool	isGuardingTheGate;
+
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);
-		virtual ~ScavTrap();
+		~ScavTrap();
 
 		ScavTrap(const ScavTrap &other);
 		ScavTrap &operator=(const ScavTrap &other);
 
 		void	guardGate();
-
-	protected:
-		unsigned int	energyPoints;
 		void	attack(const std::string &target);
 
 };

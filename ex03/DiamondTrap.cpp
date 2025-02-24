@@ -1,25 +1,32 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() {
+DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name") {
 
+	this->name = "defaultDT";
+	this->hitPoints = 0;
+	this->energyPoints = 0;
+	this->attackDamage = 0;
 	std::cout << "DiamondTrap Default Constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) {
+DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other) {
+
+	*this = other;
+	std::cout << "DiamondTrap " << this->name << " Copy-Constructor called" << std::endl;
+}
+
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name") {
 
 	this->name = name;
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 30;
 	std::cout << "DiamondTrap " << this->name << " Contructor called" << std::endl;
-
 }
 
 DiamondTrap::~DiamondTrap() {
 
 	std::cout << "DiamondTrap " << this->name << " Destructor called" << std::endl;
-}
-
-DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other) {
-
-	std::cout << "DiamondTrap " << this->name << " Copy-Constructor called" << std::endl;
 }
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap &other) {
@@ -36,37 +43,12 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap &other) {
 
 void	DiamondTrap::whoAmI() {
 
-	std::cout << "I am " << this->name << std::endl;
+	std::cout << "I am " << this->name << ", my ClapTrap name is " << ClapTrap::name << std::endl;
 }
 
 void	DiamondTrap::attack(const std::string &target) {
 
-	if (this->hitPoints > 0 && this->energyPoints > 0) {
-		std::cout << "ClapTrap " << this->name << " stomps " <<  target
-		<< ", causing " << this->attackDamage << " points of damage!" << std::endl;
-		--this->energyPoints;
-	}
-	else if (hitPoints == 0) {
-		std::cout << "ClapTrap " << this->name << " has no hitPoints left" << std::endl;
-	}
-	else if (energyPoints == 0) {
-		std::cout << "ClapTrap " << this->name << " has no energyPoints left" << std::endl;
-	}
+	ScavTrap::attack(target);
 }
 
-/* 
-	std::string	name;
 
-	public:
-		DiamondTrap();
-		DiamondTrap(std::string name);
-		
-		~DiamondTrap();
-
-		DiamondTrap(const DiamondTrap &other);
-		DiamondTrap &operator=(const DiamondTrap &other);
-
-		void	whoAmI();
-		void	attack(const std::string &target);
-
-}; */

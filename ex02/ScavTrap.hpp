@@ -5,6 +5,9 @@
 
 class ScavTrap : public ClapTrap
 {
+	private:
+		bool isGuardingTheGate;
+		
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);
