@@ -3,9 +3,9 @@
 DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name") {
 
 	this->name = "default";
-	this->hitPoints = 0;
-	this->energyPoints = 0;
-	this->attackDamage = 0;
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 30;
 	std::cout << "DiamondTrap Default Constructor called" << std::endl;
 }
 
@@ -19,7 +19,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name") {
 
 	this->name = name;
 	this->hitPoints = 100;
-	this->energyPoints = 50;
+	this->energyPoints =  50;
 	this->attackDamage = 30;
 	std::cout << "DiamondTrap " << this->name << " Contructor called" << std::endl;
 }
@@ -50,5 +50,3 @@ void	DiamondTrap::attack(const std::string &target) {
 
 	ScavTrap::attack(target);
 }
-
-
